@@ -353,6 +353,7 @@ $config['csrf_regenerate']         = FALSE;
 |--------------------------------------------------------------------------
 | Middlewares
 |--------------------------------------------------------------------------
+<<<<<<< HEAD
 |
 | Registered middlewares (used by $router->...->middleware('alias'))
 | are defined in app/config/middleware.php. It is required here so
@@ -360,4 +361,11 @@ $config['csrf_regenerate']         = FALSE;
 | class.
 */
 require_once __DIR__ . '/middleware.php';
+=======
+| get_config() only auto-loads this file (config.php), so middleware.php
+| is pulled in here to make sure $config['middlewares'] is populated
+| before the Middleware kernel class needs it.
+*/
+require_once APP_DIR . 'config/middleware.php';
+>>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6
 ?>

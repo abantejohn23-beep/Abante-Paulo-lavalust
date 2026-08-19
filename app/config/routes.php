@@ -44,6 +44,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 */
 /** @var object $router **/
 
+<<<<<<< HEAD
 $router->get('/', 'Home::index');
 
 /*
@@ -58,3 +59,15 @@ $router->get('/', 'Home::index');
 */
 $router->get('/student', 'StudentController::index');
 $router->get('/student/profile', 'StudentController::profile')->middleware('student.access');
+=======
+$router->get('/', 'Welcome::index');
+
+/*
+| -------------------------------------------------------------------
+| STUDENT PORTAL ROUTES
+| -------------------------------------------------------------------
+*/
+$router->get('/student', 'StudentController::index');
+$router->get('/student/profile', 'StudentController::profile')->middleware('student_access');
+$router->get('/student/logout', 'StudentController::logout');
+>>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6

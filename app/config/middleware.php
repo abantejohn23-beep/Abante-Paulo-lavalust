@@ -41,6 +41,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | Used for adding middlewares
 |
 */
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Student Info Laboratory Activity — StudentMiddleware
@@ -53,4 +54,10 @@ require_once APP_DIR . 'middlewares/StudentMiddleware.php';
 
 $config['middlewares'] = [
 	'student.access' => new StudentMiddleware(),
+=======
+require_once APP_DIR . 'middlewares/StudentMiddleware.php';
+
+$config['middlewares'] = [
+    'student_access' => new StudentMiddleware(),
+>>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6
 ];
