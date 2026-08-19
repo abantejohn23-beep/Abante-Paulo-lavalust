@@ -141,7 +141,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
       <div class="actions">
         <a class="btn" href="<?= site_url('student') ?>">← Back to Home</a>
-        <a class="btn" href="<?= site_url('student/logout') ?>">Check out</a>
       </div>
     </div>
   </div>

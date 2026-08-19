@@ -142,7 +142,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
     <div class="actions">
       <a class="btn btn-primary" href="<?= site_url('student/profile') ?>">View Digital ID →</a>
-      <a class="btn btn-ghost" href="<?= site_url('student/logout') ?>">Check out (test blocked access)</a>
+      <a class="btn btn-ghost" href="<?= site_url('student/logout') ?>">Check (test blocked access)</a>
     </div>
   </div>
 </main>

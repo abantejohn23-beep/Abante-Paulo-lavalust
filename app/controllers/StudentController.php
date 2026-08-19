@@ -54,15 +54,15 @@ class StudentController extends Controller
     {
         // Associative array of student data, passed to the view
         $student = [
-            'student_id'   => '2024-00123',
-            'name'         => 'Pau',
+            'student_id'   => 'MCC2024-00048',
+            'name'         => 'Paulo Abante',
             'course'       => 'BS Information Technology',
             'year_level'   => '3rd Year',
-            'section'      => 'BSIT-3A',
-            'email'        => 'pau.student@example.edu.ph',
+            'section'      => 'BSIT-3F1',
+            'email'        => 'pau.student@gmail.com',
             'contact'      => '0917-000-0000',
-            'address'      => 'San Pablo City, Laguna, Philippines',
-            'hobbies'      => 'Web development, networking labs, coding capstone projects',
+            'address'      => 'Santa isabel, Naujan, Oriental Mindoro, Philippines',
+            'hobbies'      => 'Badmiton, Mobile Gaming',
             'photo'        => base_url('assets/img/student.jpg'),
         ];
 
