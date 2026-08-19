@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 /**
@@ -7,67 +7,26 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
  * ------------------------------------------------------------------
  * Guards the /student/profile route.
  *
-<<<<<<< HEAD
- * Access condition (unique to this activity): the visitor must carry
- * a "haunted pass" in their session — $_SESSION['student_access'].
- * That pass is stamped by StudentController::index() when the
- * visitor enters through /student, the "gate" of the Haunted Hallway.
- *
- * Conceptual flow:
- *
- *   Request
- *     ↓
- *   StudentMiddleware
- *     ↓
- *   Is $_SESSION['student_access'] === true ?
- *     ├── YES → StudentController::profile() → View
- *     └── NO  → Redirect back to /student
- * ------------------------------------------------------------------
-=======
  * Access condition (unique to this app):
  * The visitor must have first "checked in" at the Student Portal home
  * page ( /student ), which stamps a session flag. Anyone who tries to
  * jump straight to the profile / digital ID page without checking in
  * first is bounced back to the home page with a denial notice.
->>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6
  */
 class StudentMiddleware
 {
     /**
-<<<<<<< HEAD
-     * Handle the incoming request.
-     *
-     * @param Closure $next
-     * @return mixed
-     */
-    public function handle($next)
-=======
      * Handle an incoming request.
      *
      * @param  Closure $next
      * @return mixed
      */
     public function handle(Closure $next)
->>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
-<<<<<<< HEAD
-        $has_pass = isset($_SESSION['student_access']) && $_SESSION['student_access'] === true;
-
-        if ($has_pass) {
-            return $next();
-        }
-
-        // No haunted pass found — send the visitor back to the gate.
-        $_SESSION['student_access_denied_message'] =
-            '👻 Boo! You tried to sneak into the crypt without a haunted pass. '
-            . 'Walk through the gate at /student first.';
-
-        redirect('student');
-=======
         $allowed = isset($_SESSION['student_access']) && $_SESSION['student_access'] === true;
 
         if (!$allowed) {
@@ -77,6 +36,5 @@ class StudentMiddleware
         }
 
         return $next();
->>>>>>> 479b9dce994c61c81236cc241752115ccb6298e6
     }
 }
